@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export default function App() {
   const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  const [imagemForca, setimagemForca] = useState("assets/forca0.png");
+  const [imagemForca, setImagemForca] = useState("assets/forca0.png");
   const [desativado, setDesativado] = useState(true);
   const [classePalavra, setClassePalavra] = useState([]);
   const [classePalavraEscondida, setClassePalavraEscondida] = useState([]);
@@ -16,16 +16,6 @@ export default function App() {
   const [clicadas, setClicadas] = useState([]);
   const [cor, setCor] = useState('preto');
   let palavra;
-  let resultado = [];
-
-
-
-
-
-  function fimDoJogo() {
-
-  }
-
 
 
   return (
@@ -34,14 +24,17 @@ export default function App() {
         imagem={imagemForca}
         palavra={palavra}
         palavras={palavras}
-        classeLetra={classeLetra}
         setClasseLetra={setClasseLetra}
-        classePalavra={classePalavra}
         setClassePalavra={setClassePalavra}
         classePalavraEscondida={classePalavraEscondida}
         setClassePalavraEscondida={setClassePalavraEscondida}
         setDesativado={setDesativado}
         cor={cor}
+        setImagemForca={setImagemForca}
+        setQtdAcertos={setQtdAcertos}
+        setQtdErros={setQtdErros}
+        setCor={setCor}
+        setClicadas={setClicadas}
       />
 
       <Letras
@@ -53,7 +46,7 @@ export default function App() {
         setClassePalavraEscondida={setClassePalavraEscondida}
         qtdErros={qtdErros}
         setQtdErros={setQtdErros}
-        setimagemForca={setimagemForca}
+        setimagemForca={setImagemForca}
         clicadas={clicadas}
         setClicadas={setClicadas}
         setCor={setCor}

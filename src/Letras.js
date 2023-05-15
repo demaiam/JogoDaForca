@@ -74,7 +74,7 @@ export default function Letras({alfabeto, desativado, setDesativado, classePalav
     return (
         <div class="letras">
             {alfabeto.map ( (letra) => <button 
-                                        disabled={desativado} 
+                                        disabled={desativado || clicadas.includes(letra)}
                                         class={clicadas.includes(letra) || desativado ? "letra bloqueado" : "letra ativado"}
                                         key={letra}
                                         onClick={() => selecionaLetra(letra)}

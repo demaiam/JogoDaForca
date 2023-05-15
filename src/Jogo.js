@@ -1,7 +1,15 @@
-export default function Jogo({ imagem, palavra, palavras, classeLetra, setClasseLetra, classePalavra, setClassePalavra, classePalavraEscondida, setClassePalavraEscondida, setDesativado, cor }) {
+export default function Jogo({ imagem, palavra, palavras, setClasseLetra, setClassePalavra, classePalavraEscondida, setClassePalavraEscondida, setDesativado, cor, setImagemForca, setQtdAcertos, setQtdErros, setCor, setClicadas }) {
     function iniciarJogo() {
         let resultado = [];
         let resultadoEscondido = [];
+
+        setImagemForca('assets/forca0.png');
+        setQtdAcertos(1);
+        setQtdErros(1);
+        setCor('preto');
+        setDesativado(true);
+        setClasseLetra('letra bloqueado');
+        setClicadas([]);
 
         palavra = palavras[Math.floor(Math.random() * palavras.length)];
 
